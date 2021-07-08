@@ -1,0 +1,4 @@
+{
+    "port":3000,
+    "db":"mongodb+srv://calwin:123@cluster0.szquk.mongodb.net/roomBooking?retryWrites=true&w=majority"
+}

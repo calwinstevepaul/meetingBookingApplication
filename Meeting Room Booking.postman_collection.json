@@ -1,0 +1,641 @@
+{
+	"info": {
+		"_postman_id": "fefaa003-55b8-45bd-9271-f69d03c45c99",
+		"name": "Meeting Room Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"2021-07-09T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-09T15:00:04.832Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/event/add",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"event",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Event - 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"2021-07-09T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-09T15:00:04.832Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "219"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"db-Cr9NqcZfCEo0muS6yz0A+F3/F3M\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 18:01:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timeRange\": [\n        \"2021-07-09T10:00:04.832Z\",\n        \"2021-07-09T15:00:04.832Z\"\n    ],\n    \"_id\": \"60e73d87d9338c4d00c39059\",\n    \"date\": \"5/6/2021\",\n    \"startTime\": \"10:0\",\n    \"endDate\": \"15:0\",\n    \"isActive\": true,\n    \"createdOn\": \"2021-07-08T18:01:43.898Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Add Event - 400 - slot booked",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"2021-07-09T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-09T15:00:04.832Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"add"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-GHVbuWT3M49yFj0ojM8kZ2HcE0g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 18:03:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "This slot is booked"
+				},
+				{
+					"name": "Add Event - 400 - invalid data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"endDate\":\"2021-07-09T10:00:04.832Z\",\r\n    \"startDate\":\"2021-07-09T15:00:04.832Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"add"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-pEVrgin7KV3cfyyUG4WjMRyUxNQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 18:04:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid start time and end time"
+				}
+			]
+		},
+		{
+			"name": "Update event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"60e73d87d9338c4d00c39059\",\r\n    \"startDate\":\"2021-07-10T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-10T15:00:04.832Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/event/update",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"event",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update event - 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"60e73d87d9338c4d00c39059\",\r\n    \"startDate\":\"2021-07-10T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-10T15:00:04.832Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "219"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"db-F51CPFl3d0IY5UV4qxp6HPFI77Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 18:33:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"60e73d87d9338c4d00c39059\",\n    \"timeRange\": [\n        \"2021-07-10T10:00:04.832Z\",\n        \"2021-07-10T15:00:04.832Z\"\n    ],\n    \"date\": \"6/6/2021\",\n    \"startTime\": \"10:0\",\n    \"endDate\": \"15:0\",\n    \"isActive\": true,\n    \"createdOn\": \"2021-07-08T18:01:43.898Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Update event - 400 - time haven't changed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"60e73d87d9338c4d00c39059\",\r\n    \"startDate\":\"2021-07-10T10:00:04.832Z\",\r\n    \"endDate\":\"2021-07-10T15:00:04.832Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"update"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-0mUiExmjxHgUOj1wzcQpa6vaTPo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 18:45:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Event time is same as before"
+				}
+			]
+		},
+		{
+			"name": "Cancel event (Many or single) - 200",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":[\"60e73d87d9338c4d00c39059\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/event/cancel",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"event",
+						"cancel"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel event - 200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":[\"60e73d87d9338c4d00c39059\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/cancel",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-R9lIRPU7Oszd7KQW+ZUXEDh9oxU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 19:27:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "All given events are cancelled"
+				},
+				{
+					"name": "Cancel event - 400 - no such event",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":[\"60e73d87d9338c4d00c39059\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/cancel",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"cancel"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17-MfqG+Y5VSbGa/y5rw2UYVwgd1Aw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 19:27:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "no such event to update"
+				},
+				{
+					"name": "Cancel event - 400 - no eventID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":[]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/event/cancel",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								"cancel"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-GFP0skUTbCoiF7jAY3NVYg4ummU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 19:28:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "event ID is Missing"
+				}
+			]
+		},
+		{
+			"name": "Get Event ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/event/?date=2021-07-10",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-07-10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Event ",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/event/?date=2021-07-10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"event",
+								""
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2021-07-10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"de-zNccnwJFFD9TlzUEuf3kgWiC2ow\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 20:22:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"timeRange\": [\n            \"2021-07-10T12:00:04.832Z\",\n            \"2021-07-10T16:00:04.832Z\"\n        ],\n        \"_id\": \"60e73d87d9338c4d00c39059\",\n        \"date\": \"10/6/2021\",\n        \"startTime\": \"12:0\",\n        \"endDate\": \"16:0\",\n        \"isActive\": true,\n        \"createdOn\": \"2021-07-08T18:01:43.898Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	]
+}
